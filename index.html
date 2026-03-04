@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的心情曲线</title>
+    <!-- 引入我们新的外部样式表 -->
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>我的心情日记</h1>
+
+    <!-- 将表单包裹在卡片容器中 -->
+    <div class="card">
+        <form id="mood-form">
+            <div>
+                <label for="mood-date">选择日期:</label>
+                <input type="date" id="mood-date" required>
+            </div>
+            <div>
+                <label for="mood-score">今天的心情 (1-10分):</label>
+                <input type="number" id="mood-score" min="1" max="10" required>
+            </div>
+            <div>
+                <label for="mood-diary">简单记录一下吧:</label>
+                <textarea id="mood-diary" rows="4"></textarea>
+            </div>
+            <div>
+                <button type="submit">保存心情</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 将图表和列表包裹在卡片容器中 -->
+    <div class="card">
+        <h2>我的心情曲线</h2>
+        <div id="chart-container">
+            <canvas id="mood-chart"></canvas>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>心情记录列表</h2>
+        <ul id="mood-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
